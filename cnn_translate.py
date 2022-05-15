@@ -23,7 +23,3 @@ class CAPTCHA_Translater():
             result += str(np.argmax(num))
         return result
 
-filename = '000998_3.jpg'
-img = cv2.imread(f'{config.CAPTCHA_DIR}/{filename[:6]}/{filename}')
-translater = CAPTCHA_Translater()
-print(translater.translate(img))
