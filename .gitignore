@@ -1,0 +1,6 @@
+__pycache__/
+CAPTCHA/
+venv/
+test.csv
+train.csv/
+CAPTCHA*
