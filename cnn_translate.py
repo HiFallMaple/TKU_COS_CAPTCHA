@@ -20,6 +20,6 @@ class CAPTCHA_Translater():
         nums = np.array_split(output.detach().cpu().numpy(), config.CAPTCHA_LEN)
         result = str()
         for num in nums:
-            result += str(np.argmax(num))
+            result += config.CHAR_LIST[np.argmax(num)]
         return result
 
