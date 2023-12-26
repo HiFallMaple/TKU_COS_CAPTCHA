@@ -3,6 +3,7 @@ import csv
 import cv2
 import one_hot_code
 import config
+import utils
 
 class CAPTCHADataset(Dataset):
     """Face Landmarks dataset."""
@@ -13,7 +14,7 @@ class CAPTCHADataset(Dataset):
         
     def __getitem__(self, index):
         filename = self.img_name_list[index]
-        img = cv2.imread(f'{config.CAPTCHA_DIR}/{filename[:6]}/{filename}')
+        img = cv2.imread(utils.get_img_path(filename))
         img = config.transform(img)
         label = one_hot_code.encode(filename[:6])
         return (img, label)
